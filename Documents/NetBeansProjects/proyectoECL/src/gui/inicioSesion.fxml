@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controladoresGUI.InicioSesionController">
+  <children>
+    <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <center>
+        <Pane prefHeight="200.0" prefWidth="200.0">
+          <children>
+            <Button fx:id="btningresar" layoutX="200.0" layoutY="187.0" mnemonicParsing="false" text="Ingresar" />
+            <Button fx:id="btnregistro" layoutX="192.0" layoutY="244.0" mnemonicParsing="false" text="Registrarse" />
+            <Label layoutX="14.0" layoutY="84.0" text="Nombre de usuario:">
+              <font>
+                <Font size="16.0" fx:id="x1" />
+              </font>
+            </Label>
+            <Label font="$x1" layoutX="36.0" layoutY="133.0" text="Contraseña:" />
+            <PasswordField layoutX="153.0" layoutY="127.0" prefWidth="157.333251953125" />
+            <TextField layoutX="153.0" layoutY="84.0" prefWidth="157.33331298828125" />
+            <Label layoutX="226.0" layoutY="212.0" text="o">
+              <font>
+                <Font size="18.0" />
+              </font>
+            </Label>
+          </children>
+        </Pane>
+      </center>
+      <left>
+        <Pane prefHeight="200.0" prefWidth="200.0">
+          <children>
+            <ImageView fitHeight="118.0" fitWidth="157.33333333333331" layoutX="21.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true" />
+          </children>
+        </Pane>
+      </left>
+      <top>
+        <Pane prefHeight="102.0" prefWidth="600.0">
+          <children>
+            <Label layoutX="109.0" layoutY="31.0" text="Educacion Continua en Línea" textFill="#1000cc">
+              <font>
+                <Font size="30.0" />
+              </font>
+            </Label>
+          </children>
+        </Pane>
+      </top>
+    </BorderPane>
+  </children>
+</AnchorPane>
