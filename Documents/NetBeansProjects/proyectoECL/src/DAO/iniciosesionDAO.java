@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
+package DAO;s
 
 import interfacesDAO.InicioSesionDao;
 import java.sql.PreparedStatement;
@@ -23,16 +23,15 @@ public class iniciosesionDAO implements InicioSesionDao{
         PreparedStatement validarcliente = null;
        
         String sql = "SELECT * FROM `cliente` WHERE `nombre` = ?";
-        java.sql.Date date = java.sql.Date.valueOf(cliente.getFechanac());
+        
         try{
             Conexion.conectar();
             
             validarcliente = Conexion.cnx.prepareStatement(sql);
-          
             validarcliente.setString(1, cliente.getContrasenia());
             
               
-            validarcliente.executeQuery(sql);
+            Conexion.res =validarcliente.executeQuery(sql);
             validado = true;
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
