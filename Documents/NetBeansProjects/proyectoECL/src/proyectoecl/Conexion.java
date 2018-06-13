@@ -7,6 +7,7 @@ package proyectoecl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,7 +18,7 @@ import java.sql.Statement;
  * de datos.
  * @author J. Rodrigo Ordóñez Pacheco
  */
-public class Conexion {
+public class Conexion{
 
     private Connection cnx = null;
     private Statement sentencia = null;
@@ -34,7 +35,7 @@ public class Conexion {
     public void conectar(){
         try{
             Class.forName("com.mysql.jdbc.Driver");//DRIVER
-            cnx = DriverManager.getConnection("jdbc:mysql://localhost/sitdatabase", "root", "");//CONECCION (DATOS: DIRECCION DE LA BASE, USER, PASS)
+            cnx = DriverManager.getConnection("jdbc:mysql://localhost/proyectoecl", "root", "");//CONECCION (DATOS: DIRECCION DE LA BASE, USER, PASS)
             if(cnx != null){
                 sentencia = cnx.createStatement();//CREAR LA CONEXION
                 System.out.println("Conexión exitosa");

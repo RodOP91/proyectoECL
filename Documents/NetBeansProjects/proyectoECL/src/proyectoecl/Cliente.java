@@ -5,7 +5,7 @@
  */
 package proyectoecl;
 
-import java.sql.Date;
+import java.time.*;
 import java.util.Calendar;
 
 /**
@@ -17,16 +17,19 @@ public class Cliente {
     private String apellidop;
     private String apellidom;
     private String curp;
-    private Date fechanac;
+    private LocalDate fechanac;
     private String folio;
     private String refbancaria;
     private String matricula;
     private String contrasenia;
     private String email;
-    private int genero;
+    private int genero; // 0= mujer  1= hombre
 
+    public Cliente(){
+        
+    }
     public Cliente(String nombre, String apellidop, String apellidom, String curp, 
-            Date fechanac, String folio, String refbancaria, String matricula, 
+            LocalDate fechanac, String folio, String refbancaria, String matricula, 
             String contrasenia, String email, int genero) {
         this.nombre = nombre;
         this.apellidop = apellidop;
@@ -38,7 +41,7 @@ public class Cliente {
         this.matricula = matricula;
         this.contrasenia = contrasenia;
         this.email = email;
-        this.genero = genero; // 0= mujer  1= hombre
+        this.genero = genero; 
     }
 
     public Cliente(String nombre, String contrasenia) {
@@ -47,7 +50,7 @@ public class Cliente {
     }
 
     public Cliente(String nombre, String apellidop, String apellidom, String curp, 
-            String contrasenia, String email, int genero, int dia, int mes, int anio) {
+            String contrasenia, String email, int genero, LocalDate fecha) {
         this.nombre = nombre;
         this.apellidop = apellidop;
         this.apellidom = apellidom;
@@ -55,17 +58,10 @@ public class Cliente {
         this.contrasenia = contrasenia;
         this.email = email;
         this.genero = genero;
-        this.fechanac= this.calcularFecha(dia, mes, anio);
+        this.fechanac= fecha;
         
     }
     
-    private Date calcularFecha(int dia, int mes, int anio){
-        dia = Calendar.DAY_OF_MONTH;
-        mes = Calendar.MONTH;
-        anio = Calendar.YEAR;
-        Date fecha = Date.valueOf(anio+"-"+mes+"-"+dia);
-        return fecha;
-    }
 
     public String getNombre() {
         return nombre;
@@ -83,7 +79,7 @@ public class Cliente {
         return curp;
     }
 
-    public Date getFechanac() {
+    public LocalDate getFechanac() {
         return fechanac;
     }
 
@@ -131,7 +127,7 @@ public class Cliente {
         this.curp = curp;
     }
 
-    public void setFechanac(Date fechanac) {
+    public void setFechanac(LocalDate fechanac) {
         this.fechanac = fechanac;
     }
 

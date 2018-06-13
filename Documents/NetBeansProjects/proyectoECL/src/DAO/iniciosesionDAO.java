@@ -3,15 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interfacesDAO;
+package DAO;
 
+import interfacesDAO.InicioSesionDao;
 import proyectoecl.Cliente;
 
 /**
  *
  * @author ferzo
  */
-public interface InicioSesionDao {
-    public Cliente consultarCliente(String nomcliente);
-    
+public class iniciosesionDAO implements InicioSesionDao{
+    @Override
+    public Cliente consultarCliente(String nomcliente){
+        Cliente cliente = new Cliente();
+        return cliente;
+    }
 }

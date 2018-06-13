@@ -5,13 +5,13 @@
  */
 package interfacesDAO;
 
+import java.sql.SQLException;
 import proyectoecl.Cliente;
 
 /**
  *
  * @author ferzo
  */
-public interface InicioSesionDao {
-    public Cliente consultarCliente(String nomcliente);
-    
+public interface RegistroClienteDao {
+    public boolean registrarCliente(Cliente cliente) throws SQLException;
 }
