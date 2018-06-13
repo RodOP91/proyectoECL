@@ -16,14 +16,14 @@
           <children>
             <Button fx:id="btningresar" layoutX="200.0" layoutY="187.0" mnemonicParsing="false" text="Ingresar" />
             <Button fx:id="btnregistro" layoutX="192.0" layoutY="244.0" mnemonicParsing="false" text="Registrarse" />
-            <Label layoutX="14.0" layoutY="84.0" text="Nombre de usuario:">
+            <Label layoutX="8.0" layoutY="84.0" text="Nombre de usuario:">
               <font>
                 <Font size="16.0" fx:id="x1" />
               </font>
             </Label>
             <Label font="$x1" layoutX="36.0" layoutY="133.0" text="Contraseña:" />
-            <PasswordField layoutX="153.0" layoutY="127.0" prefWidth="157.333251953125" />
-            <TextField layoutX="153.0" layoutY="84.0" prefWidth="157.33331298828125" />
+            <PasswordField id="pwfcontraseña" fx:id="pwfcontrasena" layoutX="153.0" layoutY="127.0" prefWidth="157.333251953125" />
+            <TextField fx:id="txtfnomusuario" layoutX="153.0" layoutY="84.0" prefWidth="157.33331298828125" />
             <Label layoutX="226.0" layoutY="212.0" text="o">
               <font>
                 <Font size="18.0" />

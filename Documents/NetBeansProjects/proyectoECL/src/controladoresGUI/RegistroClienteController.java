@@ -85,12 +85,12 @@ public class RegistroClienteController implements Initializable {
             
             Cliente cliente = new Cliente(txtfnombre.getText(), txtfapellidop.getText(), 
             txtfapellidom.getText(), txtfcurp.getText(), txtfcontrasenia.getText(), 
-                    txtfemail.getText(), genero, fecha);
+                    txtfemail.getText(), genero, dpfecha.getValue());
             System.out.println(dpfecha.getValue());
-            Conexion conn = new Conexion();
+            Conexion.conectar();
             try{
                 registroclienteDAO registro = new registroclienteDAO();
-                boolean flag =registro.registrarCliente(cliente);
+                boolean flag =registro.registroCliente(cliente);
                 
                 if(flag == true){
                     JOptionPane.showMessageDialog(null, "Registro exitoso");
@@ -100,6 +100,7 @@ public class RegistroClienteController implements Initializable {
             }catch(SQLException ex){
                 JOptionPane.showMessageDialog(null, "Error en la conexión con la base de datos");
             }
+            
             //System.out.println(cbxgenero.getSelectionModel().getSelectedIndex());
 }
     });

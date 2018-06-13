@@ -13,5 +13,5 @@ import proyectoecl.Cliente;
  * @author ferzo
  */
 public interface RegistroClienteDao {
-    public boolean registrarCliente(Cliente cliente) throws SQLException;
+    public boolean registroCliente(Cliente cliente) throws SQLException;
 }

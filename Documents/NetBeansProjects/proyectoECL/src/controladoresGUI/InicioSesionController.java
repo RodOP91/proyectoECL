@@ -5,6 +5,7 @@
  */
 package controladoresGUI;
 
+import DAO.iniciosesionDAO;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -31,6 +32,7 @@ import javafx.event.EventHandler;
 
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import proyectoecl.Cliente;
 
 
 /**
@@ -76,6 +78,15 @@ public class InicioSesionController implements Initializable {
               
             }
     });
+        btningresar.setOnAction(new EventHandler<ActionEvent> (){
+            @Override
+            public void handle(ActionEvent event){
+                iniciosesionDAO inicio = new iniciosesionDAO();
+                Cliente cliente = new Cliente(txtfnomusuario.getText(), pwfcontrasena.getText());
+                
+                inicio.validarDatos(cliente);
+            }
+        });
     }
     
     public void cerrarVentana(){

@@ -4,8 +4,50 @@
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-    
+<AnchorPane id="AnchorPane" prefHeight="557.0" prefWidth="807.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <center>
+        <Pane prefHeight="357.0" prefWidth="285.0">
+          <children>
+            <Button layoutX="45.0" layoutY="129.0" mnemonicParsing="false" prefHeight="98.9609375" prefWidth="195.0" text="Cursos">
+              <font>
+                <Font size="30.0" fx:id="x1" />
+              </font>
+            </Button>
+          </children>
+        </Pane>
+      </center>
+      <left>
+        <Pane prefHeight="357.0" prefWidth="263.0">
+          <children>
+            <Button font="$x1" layoutX="14.0" layoutY="127.0" mnemonicParsing="false" prefHeight="102.9609375" prefWidth="195.0" text="Mi Perfil" />
+          </children>
+        </Pane>
+      </left>
+      <right>
+        <Pane prefHeight="357.0" prefWidth="263.0">
+          <children>
+            <Button font="$x1" layoutX="14.0" layoutY="129.0" mnemonicParsing="false" prefHeight="98.96091542968497" prefWidth="195.0" text="Mis Cursos" />
+          </children>
+        </Pane>
+      </right>
+      <top>
+        <Pane prefHeight="200.0" prefWidth="200.0">
+          <children>
+            <Label layoutX="347.0" layoutY="79.0" text="NOMBRE DEL USUARIO">
+              <font>
+                <Font size="32.0" />
+              </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="45.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+          </children>
+        </Pane>
+      </top>
+    </BorderPane>
+  </children>
 </AnchorPane>

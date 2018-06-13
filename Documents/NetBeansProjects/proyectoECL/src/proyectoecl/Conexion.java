@@ -10,6 +10,8 @@ import java.sql.DriverManager;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.Statement;
 
 
@@ -20,22 +22,30 @@ import java.sql.Statement;
  */
 public class Conexion{
 
-    private Connection cnx = null;
-    private Statement sentencia = null;
-    private ResultSet res = null;
+    private static final String DB_DRIVER = "com.mysql.jdbc.Driver";
+    private static final String DB_CONNECTION = "jdbc:mysql://localhost/proyectoecl";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "";
+    
+    
+    public static Connection cnx;
+    public static Statement sentencia;
+    public static ResultSet res;
     
     //CONSTRUCTOR
     public Conexion(){
         
-        conectar();
+        
     }
     /**
      * Método que realiza la conexión con la DB para la tecnologia SQL.
      */
-    public void conectar(){
+    
+    public static void conectar(){
         try{
-            Class.forName("com.mysql.jdbc.Driver");//DRIVER
-            cnx = DriverManager.getConnection("jdbc:mysql://localhost/proyectoecl", "root", "");//CONECCION (DATOS: DIRECCION DE LA BASE, USER, PASS)
+            Class.forName(DB_DRIVER);//DRIVER
+            cnx = DriverManager.getConnection(DB_CONNECTION, DB_USER, DB_PASSWORD);//CONECCION (DATOS: DIRECCION DE LA BASE, USER, PASS)
+            
             if(cnx != null){
                 sentencia = cnx.createStatement();//CREAR LA CONEXION
                 System.out.println("Conexión exitosa");
@@ -48,7 +58,7 @@ public class Conexion{
     /**
      * Método que cierra la conexion con la BD.
      */
-    public void cerrar(){
+    public static void cerrar(){
         if(cnx != null){
             try {
                 cnx.close();
@@ -69,7 +79,7 @@ public class Conexion{
      * @return flag
      * Valor boolean que indica si se realizo la instrucción sql
      */
-    public boolean ejecutar(String sql){
+    public static boolean ejecutar(String sql){
         boolean flag;
         try{
             sentencia.execute(sql);
@@ -91,7 +101,7 @@ public class Conexion{
      * @return res
      * Set de Resultados con todos los registros que se recuperaron de la DB.
      */
-    public ResultSet consultar(String sql){
+    public static ResultSet consultar(String sql){
         try{
             res = sentencia.executeQuery(sql);
         }
