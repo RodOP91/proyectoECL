@@ -7,6 +7,8 @@ package controladoresGUI;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -43,13 +45,25 @@ public class RegistroClienteController implements Initializable {
     private Button btncancelar;
     @FXML
     private Button btnregistrarse;
+    @FXML
+    private ComboBox cbxgenero;
+    @FXML
+    private TextField txtfcontrasenia;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        cbxgenero
+        btnregistrarse.setOnAction(new EventHandler<ActionEvent>(){
+        @Override
+        public void handle(ActionEvent event){
+            cbxgenero.getSelectionModel().getSelectedItem()
+            Cliente cliente = new Cliente(txtfnombre.getText(), txtfapellidop.getText(), 
+            txtfapellidom.getText(), txtfcurp.getText(), txtfcontrasenia.getText(), txtfemail.getText())
+        }
+    });
     }    
     
 }

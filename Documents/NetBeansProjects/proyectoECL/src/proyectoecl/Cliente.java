@@ -46,6 +46,27 @@ public class Cliente {
         this.contrasenia = contrasenia;
     }
 
+    public Cliente(String nombre, String apellidop, String apellidom, String curp, 
+            String contrasenia, String email, int genero, int dia, int mes, int anio) {
+        this.nombre = nombre;
+        this.apellidop = apellidop;
+        this.apellidom = apellidom;
+        this.curp = curp;
+        this.contrasenia = contrasenia;
+        this.email = email;
+        this.genero = genero;
+        this.fechanac= this.calcularFecha(dia, mes, anio);
+        
+    }
+    
+    private Date calcularFecha(int dia, int mes, int anio){
+        dia = Calendar.DAY_OF_MONTH;
+        mes = Calendar.MONTH;
+        anio = Calendar.YEAR;
+        Date fecha = Date.valueOf(anio+"-"+mes+"-"+dia);
+        return fecha;
+    }
+
     public String getNombre() {
         return nombre;
     }
