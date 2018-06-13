@@ -53,7 +53,33 @@ public class InicioSesionController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        btnregistro.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                try{
+                    Parent root = FXMLLoader.load(getClass().getResource("/gui/registroCliente.fxml"));                                
+                
+                    Stage stage = new Stage();                                                
+                    Scene scene = new Scene(root);
+                
+                    stage.setScene(scene);
+                    //Image icono = new Image("/imagenes/Logo SIT.png");
+                    //stage.getIcons().add(icono);
+                    stage.setResizable(false);
+                    stage.setTitle("Educación Continua en Línea");
+                    stage.show();                
+                    Stage nextstage = (Stage) btnregistro.getScene().getWindow();
+                    nextstage.close();
+                    }catch(IOException ex){
+                        JOptionPane.showMessageDialog(null, "Error, archivo FXML no encontraado");
+                    }
+              
+            }
+    });
+    }
     
+    public void cerrarVentana(){
+        Stage stage = (Stage) this.btnregistro.getScene().getWindow();
+        stage.close();
+    }
 }
