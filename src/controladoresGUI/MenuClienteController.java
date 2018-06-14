@@ -50,6 +50,7 @@ public class MenuClienteController implements Initializable {
         lblnombrecliente.setText(cliente.getNombre() + " " + cliente.getApellidop() + " " + cliente.getApellidop());
         lblnombrecliente.setVisible(true);
         menuclienteDAO menucliente= new menuclienteDAO();
+        
         try{
             cursosexistentes = menucliente.recuperarCursosExistentes();
             miscursos = menucliente.recuperarCursosExistentes();

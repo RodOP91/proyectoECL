@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -62,13 +63,13 @@ public class InicioSesionController implements Initializable {
             public void handle(ActionEvent event){
                 try{
                     Parent root = FXMLLoader.load(getClass().getResource("/gui/registroCliente.fxml"));                                
-                
+                    System.out.println("aqui");
                     Stage stage = new Stage();                                                
                     Scene scene = new Scene(root);
                 
                     stage.setScene(scene);
-                    //Image icono = new Image("/imagenes/Logo SIT.png");
-                    //stage.getIcons().add(icono);
+                    Image icono = new Image("/imagenes/LogoECL.png");
+                    stage.getIcons().add(icono);
                     stage.setResizable(false);
                     stage.setTitle("Educación Continua en Línea");
                     stage.show();                
@@ -95,7 +96,7 @@ public class InicioSesionController implements Initializable {
                         }else{
                             try{
                                 MenuClienteController.setCliente(clientevalidado);
-                                Parent root = FXMLLoader.load(getClass().getResource("/gui/menuCliente.fxml"));                                
+                                Parent root = FXMLLoader.load(getClass().getResource("/gui/menuCliente.fxml"));
                                 
                                 Stage stage = new Stage();                                                
                                 Scene scene = new Scene(root);
@@ -110,6 +111,9 @@ public class InicioSesionController implements Initializable {
                                 nextstage.close();
                                 }catch(IOException ex){
                                     JOptionPane.showMessageDialog(null, "Error, archivo FXML no encontraado");
+                                    System.out.println(ex.getMessage());
+                                    System.out.println(ex.getCause());
+                                    System.out.println(Arrays.toString(ex.getSuppressed()));
                                 }
                         }
                         } catch (NullPointerException ex){

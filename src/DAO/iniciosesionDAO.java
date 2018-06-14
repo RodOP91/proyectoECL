@@ -61,6 +61,7 @@ public class iniciosesionDAO implements InicioSesionDao{
                 }
             }
         }
+        System.out.println(clientevalidado.getNombre());
         return clientevalidado;
     }
 }

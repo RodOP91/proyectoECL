@@ -63,7 +63,9 @@ public class Cliente {
         
     }
     
-
+    public Integer getId(){
+        return idcliente;
+    }
     public String getNombre() {
         return nombre;
     }
