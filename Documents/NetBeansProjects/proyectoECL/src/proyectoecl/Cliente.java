@@ -13,6 +13,7 @@ import java.util.Calendar;
  * @author ferzo
  */
 public class Cliente {
+    private int idcliente;
     private String nombre;
     private String apellidop;
     private String apellidom;
@@ -28,7 +29,7 @@ public class Cliente {
     public Cliente(){
         
     }
-    public Cliente(String nombre, String apellidop, String apellidom, String curp, 
+    public Cliente(int idcliente, String nombre, String apellidop, String apellidom, String curp, 
             LocalDate fechanac, String folio, String refbancaria, String matricula, 
             String contrasenia, String email, int genero) {
         this.nombre = nombre;

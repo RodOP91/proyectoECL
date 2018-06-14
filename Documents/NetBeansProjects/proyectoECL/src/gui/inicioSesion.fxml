@@ -35,16 +35,20 @@
       <left>
         <Pane prefHeight="200.0" prefWidth="200.0">
           <children>
-            <ImageView fitHeight="118.0" fitWidth="157.33333333333331" layoutX="21.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="118.0" fitWidth="157.33333333333331" layoutX="39.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../imagenes/LogoECL.png" />
+              </image>
+            </ImageView>
           </children>
         </Pane>
       </left>
       <top>
         <Pane prefHeight="102.0" prefWidth="600.0">
           <children>
-            <Label layoutX="109.0" layoutY="31.0" text="Educacion Continua en Línea" textFill="#1000cc">
+            <Label layoutX="109.0" layoutY="31.0" text="Educacion Continua en Línea" textAlignment="CENTER" textFill="#330018">
               <font>
-                <Font size="30.0" />
+                <Font name="Segoe UI Semibold" size="32.0" />
               </font>
             </Label>
           </children>

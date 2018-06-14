@@ -12,6 +12,6 @@ import proyectoecl.Cliente;
  * @author ferzo
  */
 public interface InicioSesionDao {
-    public boolean validarDatos(Cliente cliente);
+    public Cliente validarDatos(Cliente cliente);
     
 }

@@ -32,8 +32,8 @@ public class ProyectoECL extends Application {
         Scene scene = new Scene(root);
         
         primaryStage.setScene(scene);
-        //Image icono = new Image("/imagenes/Logo SIT.png");
-        //primaryStage.getIcons().add(icono);
+        Image icono = new Image("/imagenes/LogoECL.png");
+        primaryStage.getIcons().add(icono);
         primaryStage.setResizable(false);
         primaryStage.setTitle("Educación Continua en Línea");
         primaryStage.show();  

@@ -49,6 +49,8 @@ public class InicioSesionController implements Initializable {
     private @FXML TextField txtfnomusuario;
     private @FXML PasswordField pwfcontrasena;
     
+    private Cliente clientevalidado= null;
+    
      
     /**
      * Initializes the controller class.
@@ -82,13 +84,54 @@ public class InicioSesionController implements Initializable {
             @Override
             public void handle(ActionEvent event){
                 iniciosesionDAO inicio = new iniciosesionDAO();
-                Cliente cliente = new Cliente(txtfnomusuario.getText(), pwfcontrasena.getText());
                 
-                inicio.validarDatos(cliente);
-            }
+                if(validarCamposDeTexto(txtfnomusuario.getText(), pwfcontrasena.getText()) == true){
+                    try{
+                        Cliente cliente = new Cliente(txtfnomusuario.getText(), pwfcontrasena.getText());
+                        clientevalidado =inicio.validarDatos(cliente);
+                        
+                        if(clientevalidado == null){
+                            JOptionPane.showMessageDialog(null, "Error en los datos ingresados");
+                        }else{
+                            try{
+                                MenuClienteController.setCliente(clientevalidado);
+                                Parent root = FXMLLoader.load(getClass().getResource("/gui/menuCliente.fxml"));                                
+                                
+                                Stage stage = new Stage();                                                
+                                Scene scene = new Scene(root);
+                
+                                stage.setScene(scene);
+                                Image icono = new Image("/imagenes/LogoECL.png");
+                                stage.getIcons().add(icono);
+                                stage.setResizable(false);
+                                stage.setTitle("Educación Continua en Línea");
+                                stage.show();                
+                                Stage nextstage = (Stage) btningresar.getScene().getWindow();
+                                nextstage.close();
+                                }catch(IOException ex){
+                                    JOptionPane.showMessageDialog(null, "Error, archivo FXML no encontraado");
+                                }
+                        }
+                        } catch (NullPointerException ex){
+                            Logger.getLogger(InicioSesionController.class.getName()).log(Level.SEVERE, null, ex);
+                            JOptionPane.showMessageDialog(null, "Null Pointer Exception");
+                        }
+                
+                } else {
+                    JOptionPane.showMessageDialog(null, "Introduzca datos válidos");
+                }
+                    
+                    
+           }
+                
+                
+                
+            
         });
     }
-    
+    private boolean validarCamposDeTexto(String usuario, String password) {
+        return !(usuario.equals("") || password.equals(""));
+    }    
     public void cerrarVentana(){
         Stage stage = (Stage) this.btnregistro.getScene().getWindow();
         stage.close();
